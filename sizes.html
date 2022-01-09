@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .size-box{
+            width: 150px;
+            height: 30px;
+            display: flex;
+            border: 1px solid darkgray;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .size{
+            border-radius: 50%;
+            background-color: slategrey;
+        }
+
+        .size1{
+            height: 10px;
+            width: 10px;
+        }
+        .size2{
+            height: 14px;
+            width: 14px;
+        }
+        .size3{
+            height: 18px;
+            width: 18px;
+        }
+        .size4{
+            height: 22px;
+            width: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="size-box">
+        <div class="size1 size"></div>
+        <div class="size2 size"></div>
+        <div class="size3 size"></div>
+        <div class="size4 size"></div>
+    </div>
+</body>
+<script>
+    let sizeBox = document.querySelector(".size-box");
+    sizeBox.addEventListener("click", function(e){
+        let classElems = ["size1", "size2", "size3", "size4"];
+        let allClasses = e.target.classList;
+        let firstClass = allClasses[0];
+        console.log(firstClass);
+        if(classElems.includes(firstClass)){
+            if(firstClass == "size1"){
+
+            }else if(firstClass == "size2"){
+
+            }else if(firstClass == "size3"){
+
+            }else{
+
+            }
+        }
+        console.log(e.currentTarget);
+    })
+</script>
+</html>

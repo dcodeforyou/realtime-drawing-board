@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .close{
+            height: 15px;
+            width: 15px;
+            background-color: lightcoral;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .minimize{
+            height: 15px;
+            width: 15px;
+            background-color: yellowgreen;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .sticky{
+            width: 200px;
+            height: 200px;
+        }
+
+        .navbar{
+            display: flex;
+            justify-content: flex-end;
+            height: 15%;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+
+        textarea{
+            width: 98%;
+            outline: none;
+            border: none;
+            height: 85%;
+            border-top: 2px solid #e2e2e2;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+    </style>
+</head>
+<body>
+    <button>Click</button>
+    <!-- <div class="sticky">
+        <div class="navbar">
+            <div class="minimize"></div>
+            <div class="close"></div>
+        </div>
+        <div class="textarea"></div>
+    </div> -->
+</body>
+<script>
+    let body = document.querySelector("body");
+    let btn = document.querySelector("button");
+    btn.addEventListener('click', function(e){
+        let sticky = document.createElement("div");
+        sticky.setAttribute("class", "sticky");
+        sticky.innerHTML = `
+            <div class="sticky">
+                <div class="navbar">
+                    <div class="minimize"></div>
+                    <div class="close"></div>
+                </div>
+                <textarea class="textarea"></textarea>
+            </div>
+        `;
+        body.appendChild(sticky);
+
+        //MOVABLE STICKY
+        sticky.addEventListener('mousedown', function(e){
+            window.addEventListener('mousemove', moveSticky, true);
+        }, false);
+        body.addEventListener('mouseup', function(e){
+            window.removeEventListener('mousemove', moveSticky, true )
+        }, false);
+
+        function moveSticky(e){
+            sticky.style.position = 'absolute';
+            sticky.style.top = e.clientY + 'px';
+            sticky.style.left = e.clientX + 'px';
+        }
+
+        let minimize = sticky.querySelector(".minimize");
+        let close = sticky.querySelector(".close");
+        let textArea = sticky.querySelector(".textarea");
+        let isClosed = false;
+        minimize.addEventListener('click', function(e){
+            if(!isClosed){
+                textArea.style.display = "none";
+            }else{
+                textArea.style.display = "absolute";
+            }
+            isClosed = !isClosed;
+        });
+
+        close.addEventListener('click', function(e){
+            sticky.remove();
+        })
+    })
+</script>
+</html>

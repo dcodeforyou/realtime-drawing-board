@@ -1,0 +1,112 @@
+.fas{
+    font-size: 3rem;
+}
+        .toolbar{
+            width: 90vw;
+            display: flex;
+            border: 5px solid gray;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 80px;
+            border-radius: 10px;
+            background-color: #eee;
+        }
+        .tool{
+            display: flex;
+            align-items: center;
+        }
+        .tool-image{
+            height: 50px;
+        }
+        .color-container{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 150px;
+        }
+        .color{
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: green;
+        }
+        .red{
+            background-color: hotpink;
+        }
+        .blue{
+            background-color: lightsteelblue;
+        }
+        .green{
+            background-color: lightgreen;
+        }
+
+        /*SIZE Options CSS*/
+        .size-box{
+            width: 150px;
+            height: 30px;
+            /* display: flex; */
+            display: none;
+            border: 1px solid darkgray;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .size{
+            border-radius: 50%;
+            background-color: slategrey;
+        }
+        .size1{
+            height: 10px;
+            width: 10px;
+        }
+        .size2{
+            height: 14px;
+            width: 14px;
+        }
+        .size3{
+            height: 18px;
+            width: 18px;
+        }
+        .size4{
+            height: 22px;
+            width: 22px;
+        }
+
+
+        .close{
+            height: 15px;
+            width: 15px;
+            background-color: lightcoral;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .minimize{
+            height: 15px;
+            width: 15px;
+            background-color: yellowgreen;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .sticky{
+            width: 200px;
+            height: 200px;
+        }
+
+        .navbar{
+            display: flex;
+            justify-content: flex-end;
+            height: 15%;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+
+        textarea{
+            width: 98%;
+            outline: none;
+            border: none;
+            height: 85%;
+            border-top: 2px solid #e2e2e2;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
